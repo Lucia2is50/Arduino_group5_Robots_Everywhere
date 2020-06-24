@@ -1,20 +1,14 @@
 #include <SoftwareSerial.h>
-#include <Keypad.h>
-#include <LiquidCrystal.h>
+#include <Keypad.h> //keypad library
+#include <LiquidCrystal.h> //lcd library
 
 //########################Entering passwords
 int m = 0;
 bool finished = false;
 int result[6] = {-1,-1,-1,-1,-1,-1};
 bool message_set = false;
-long password11 = 0;
-long password21 = 0;
-long password12 = 0;
-long password22 = 0;
-int exponent = 5;
-long input_password = 0;
-int led1 = 22;
-int led2 = 24;
+int led1 = 22; //led compartment 1
+int led2 = 24; //led compartment 2
 bool passwordcheck = true; //used in checking password
 int compartment = 0;
 
@@ -163,7 +157,7 @@ void loop() {
           finished = false;
         }
       else{
-        passwordcheck = true; // niet nodig vgm
+        passwordcheck = true; 
         lcd.clear();
         lcd.print("Compartment open");
         if (compartment==1){
